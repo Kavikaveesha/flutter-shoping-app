@@ -1,6 +1,7 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:shoppingapp/screens/profile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../constants/colors.dart';
@@ -327,13 +328,18 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
-                  image: AssetImage('images/p3.jpg'),
+            GestureDetector(
+              onTap: () {
+                Get.to(() => const Profil());
+              },
+              child: Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: const DecorationImage(
+                    image: AssetImage('images/p3.jpg'),
+                  ),
                 ),
               ),
             ),

@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shoppingapp/auth/auth.dart';
 
 class Profil extends StatelessWidget {
   const Profil({super.key});
@@ -7,12 +9,22 @@ class Profil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: GestureDetector(
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-              },
-              child: Text('out'))),
-    );
+        appBar: AppBar(
+          title: const Text('Profile Page'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Get.to(() => const AuthPage());
+                },
+                icon: const Icon(Icons.logout))
+          ],
+        ),
+        body: const Column(
+          children: [
+            // Items of  profile page
+            // Items of  profile page
+          ],
+        ));
   }
 }

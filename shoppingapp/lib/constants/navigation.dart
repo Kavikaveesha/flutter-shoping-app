@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shoppingapp/screens/cart.dart';
 import 'package:shoppingapp/screens/home.dart';
 import 'package:shoppingapp/screens/profile.dart';
 
@@ -21,6 +22,8 @@ class NavigationMenu extends StatelessWidget {
               controller.selectedIndex.value = index,
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(
+                icon: Icon(Icons.shopping_cart), label: 'Cart'),
             NavigationDestination(icon: Icon(Icons.person_2), label: 'Profile'),
           ],
         ),
@@ -33,5 +36,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [const Home(), const Profil()];
+  final screens = [const Home(), const CartPage(), const Profil()];
 }
