@@ -330,7 +330,7 @@ class _HomeState extends State<Home> {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(() => const Profil());
+                Get.to(() => const UserProfile());
               },
               child: Container(
                 width: 40,
